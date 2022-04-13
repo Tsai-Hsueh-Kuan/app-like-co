@@ -22,9 +22,10 @@ const mainConfig = {
 
 const testnetConfig = {
   id: 'iscn-dev-chain-2',
-  name: 'LikeCoin Taipei test chain',
+  name: 'LikeCoin iscn-dev-2 test chain',
   apiURL: 'https://node.iscn-dev-2.like.co',
   rpcURL: 'https://node.iscn-dev-2.like.co/rpc/',
+  addressPrefix: 'like',
   stakingWalletURL: 'http://likecoin-chain-taipei.netlify.app/',
 };
 
