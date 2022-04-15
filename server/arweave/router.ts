@@ -117,7 +117,6 @@ router.post('/upload',
         arweaveId,
         list,
       },
-      ,
       numAssetIds,
     ] = await Promise.all(promises)
     res.json({ arweaveId, ipfsHash, list, numAssetIds });
