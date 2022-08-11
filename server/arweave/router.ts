@@ -10,7 +10,7 @@ import { timeout, checkFileValid, convertMulterFiles } from '../utils';
 
 import { estimateARPrices, convertARPricesToLIKE, uploadFilesToArweave } from '.';
 
-const { LIKE_TARGET_ADDRESS, ARWEAVE_UPLOAD_TRY_LIMIT } = require('../config/config');
+const { LIKE_TARGET_ADDRESS } = require('../config/config');
 
 const router = Router();
 
@@ -88,10 +88,11 @@ router.post('/upload',
     do {
       tryTimes += 1
       /* eslint-disable no-await-in-loop */
+      console.log('tryTimes',tryTimes)
       tx = await queryLIKETransactionInfo(txHash as string, LIKE_TARGET_ADDRESS);
-      if (!tx && tryTimes < ARWEAVE_UPLOAD_TRY_LIMIT) await timeout(2000);
+      if (!tx && tryTimes < 100) await timeout(2000);
       /* eslint-enable no-await-in-loop */
-    } while (!tx && tryTimes < ARWEAVE_UPLOAD_TRY_LIMIT)
+    } while (!tx && tryTimes < 100)
     console.log('point 4')
 
     if (!tx || !tx?.amount) {
