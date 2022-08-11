@@ -12,7 +12,7 @@ export const GAS_ESTIMATOR_BUFFER = 50000;
 export const GAS_ESTIMATOR_SLOP = 3.58;
 export const GAS_ESTIMATOR_INTERCEPT = 99443.87;
 
-export const IPFS_ENDPOINT = 'https://ipfs.io:5001/api/v0';
+export const IPFS_ENDPOINT = 'http://like-co-ipfs:5001/api/v0';
 
 export const IPFS_VIEW_GATEWAY_URL = 'https://ipfs.io/ipfs';
 
