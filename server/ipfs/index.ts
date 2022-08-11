@@ -29,9 +29,12 @@ const getInstance = (() => {
 export async function uploadFileToIPFS(file: ArweaveFile, { onlyHash = false } = {}) {
   const client = getInstance()
   const fileBlob = file.buffer;
+  console.log('fileBlob',fileBlob)
   // eslint-disable-next-line no-console
   if (!onlyHash) client.replicas.map(c => c.add(fileBlob).catch((e) => console.error(e)));
   const res = await client.primary.add(fileBlob, { onlyHash });
+  console.log('done')
+
   return res.cid.toString();
 }
 
